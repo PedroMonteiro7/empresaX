@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* width: 100vw; */
+    height: 100vh;
+    align-items: center;
+    padding: 30px;
+}
+
+.cadastrar:hover {
+    cursor: pointer;
+    background-color: rgb(66, 65, 65);
+}
+
+.cadastrar-novo-funcionario {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffffff99;
+}
+
+.cadastrar-novo-funcionario form {
+    padding: 20px;
+
+    background-color: rgb(66, 65, 65);
+    border-radius: 10px;
+}
