@@ -15,23 +15,62 @@ body {
 
 .cadastrar:hover {
     cursor: pointer;
-    background-color: rgb(66, 65, 65);
+    background-color: rgb(121, 121, 121);
 }
 
 .cadastrar-novo-funcionario {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
+    background-color: #0009;
+    top: 0;
+    left: 0;
     display: none;
     align-items: center;
     justify-content: center;
+  }
+  
+.cadastrar-novo-funcionario form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 4px;
+    gap: 5px;
+    
+    background-color: darkgray;
+    box-shadow: 0px 0px 20px #000;
+  }
 
-    background-color: #ffffff99;
+.icons {
+    display: flex;
 }
 
-.cadastrar-novo-funcionario form {
-    padding: 20px;
+img {
+      width: 30px;
+      height: 30px;
+  }
 
-    background-color: rgb(66, 65, 65);
-    border-radius: 10px;
+.excluir-funcionario {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0009;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.excluir-funcionario form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 4px;
+    gap: 5px;
+    
+    background-color: darkgray;
+    box-shadow: 0px 0px 20px #000;
 }

@@ -1,10 +1,19 @@
 "use strict"
 
-function showFormNota(nomeFuncionario) {
-    document.querySelector(".container-form-nota").style.display = "flex"
-    document.getElementById("nomeAluno").value = nomeAluno
+function showFormCadastrar() {
+    document.querySelector(".cadastrar-novo-funcionario").style.display = "flex"
 }
 
-function exitFormNota() {
-    document.querySelector(".container-form-nota").style.display = "none"
+function exitFormCadastrar() {
+    document.querySelector(".cadastrar-novo-funcionario").style.display = "none"
+}
+
+function deletar(idFuncionario) {
+    let confirmacao = confirm("Realmente deseja deletar este(a) funcionário(a)?")
+
+    //se confirmar que quer apagar, redireciona para o arquivo de ação
+    if (confirmacao) {
+        //redireciona à acaoDeletar
+        window.location = "acaoDeletar.php?id=" + idFuncionario;
+    }
 }
