@@ -57,6 +57,22 @@
         file_put_contents($nomeArquivo, $json);
     }
 
+
+    function buscarFuncionarioPorId($nomeArquivo, $idFuncionario) {
+
+        $funcionarios = lerArquivo($nomeArquivo);
+
+        foreach($funcionarios as $funcionario) {
+            if ($funcionario->id == $idFuncionario) {
+                return $funcionario;
+            }
+        }
+        return false;
+    }
+
+
+
+
     // function cadastrarFuncionario($funcionarios, $nomeArquivo) {
     //     $arquivo = file_get_contents($nomeArquivo);
     //     $jsonArray = json_decode($arquivo);

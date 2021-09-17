@@ -56,7 +56,7 @@
                 <td><?= $funcionario->department ?></td>
                 <td class="icons">
                     <form action="acoes.php" method="post">
-                        <button type="button"><img src="icons/botao-atualizar.png" alt="atualizar"></button>
+                        <button type="button" onclick="editar(<?= $funcionario->id ?>)"><img src="icons/botao-atualizar.png" alt="atualizar"></button>
                         <button type="button" onclick="deletar(<?= $funcionario->id ?>)"><img src="icons/lixeira-de-reciclagem.png" alt="lixeira"></button>
                     </form>
                 </td>
@@ -67,7 +67,7 @@
         </table>
         <div class="cadastrar-novo-funcionario">
             <form action="acoes.php" method="POST">
-                <input type="text" name="id" id="id" placeholder="ID">
+                <input type="number" name="id" id="id" placeholder="ID">
                 <input type="text" name="first_name" id="nomeFuncionario" placeholder="Nome">
                 <input type="text" name="last_name" placeholder="Sobrenome">
                 <input type="text" name="email" placeholder="E-mail">
