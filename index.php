@@ -30,7 +30,7 @@
             <button>Buscar</button>
             <button type="button" class="cadastrar" onclick="showFormCadastrar()">Cadastrar</button>
         </form>
-        <table border="1">
+        <table>
             <tr>
                 <th>ID</th>
                 <th>First Name</th>

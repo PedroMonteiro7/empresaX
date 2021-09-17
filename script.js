@@ -21,6 +21,6 @@ function deletar(idFuncionario) {
 
 function editar(idFuncionario) {
 
-    window.location = "acaoEditar.php?id=" + idFuncionario;
+    window.location = "editar.php?id=" + idFuncionario;
 
 }
