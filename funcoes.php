@@ -85,27 +85,4 @@
     }
 
 
-
-
-    // function cadastrarFuncionario($funcionarios, $nomeArquivo) {
-    //     $arquivo = file_get_contents($nomeArquivo);
-    //     $jsonArray = json_decode($arquivo);
-
-    //     $novoFuncionario = [
-    //         "id" => $_GET["id"],
-    //         "first_name" => $_GET["nome"],
-    //         "last_name" => $_GET["sobrenome"],
-    //         "email" => $_GET["email"],
-    //         "gender" => $_GET["sexo"],
-    //         "ip_address" => $_GET["enderecoIp"],
-    //         "country" => $_GET["pais"],
-    //         "department" => $_GET["departamento"]
-    //     ];
-
-    //     $jsonArray = json_encode($arquivo);
-    //     $jsonArray = file_put_contents($nomeArquivo, $novoFuncionario);
-
-    //     return $jsonArray;
-    // }
-
 ?>

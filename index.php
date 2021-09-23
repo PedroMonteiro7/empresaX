@@ -1,93 +1,51 @@
-<?php
-
-    require("./funcoes.php");
-
-    $funcionarios = lerArquivo("empresaX.json");
-
-    if(isset($_GET["buscarFuncionario"]) && $_GET["buscarFuncionario"] != ""){
-        $funcionarios = buscarFuncionario($funcionarios, $_GET["buscarFuncionario"]);
-    }
-
-?>
 <!DOCTYPE html>
-<html lang="pt-BR">
+
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>X</title>
+
+    <title>SESSÕES NO PHP</title>
+
 </head>
+
 <body>
-    <header>
-        <h1>Funcionários da empresa X</h1>
-        <h3>A empresa conta com <?= count($funcionarios) ?> funcionários</h3>
-    </header>
-    <main>
-        <form>
-            <input type="text" value="<?= isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : "" ?>" name="buscarFuncionario" placeholder="Buscar Funcionários">
-            <button>Buscar</button>
-            <button type="button" class="cadastrar" onclick="showFormCadastrar()">Cadastrar</button>
-        </form>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>E-mail</th>
-                <th>Gender</th>
-                <th>IP Address</th>
-                <th>Country</th>
-                <th>Department</th>
-                <th>Ações</th>
-            </tr>
-            <?php
-            foreach($funcionarios as $funcionario) :
-            ?>
-            <tr>
-                <td><?= $funcionario->id ?></td>
-                <td><?= $funcionario->first_name ?></td>
-                <td><?= $funcionario->last_name ?></td>
-                <td><?= $funcionario->email ?></td>
-                <td><?= $funcionario->gender ?></td>
-                <td><?= $funcionario->ip_address ?></td>
-                <td><?= $funcionario->country ?></td>
-                <td><?= $funcionario->department ?></td>
-                <td class="icons">
-                    <form action="acoes.php" method="post">
-                        <button type="button" onclick="editar(<?= $funcionario->id ?>)"><img src="icons/botao-atualizar.png" alt="atualizar"></button>
-                        <button type="button" onclick="deletar(<?= $funcionario->id ?>)"><img src="icons/lixeira-de-reciclagem.png" alt="lixeira"></button>
-                    </form>
-                </td>
-            </tr>
-            <?php
-            endforeach;
-            ?>
-        </table>
-        <div class="cadastrar-novo-funcionario">
-            <form action="acoes.php" method="POST">
-                <input type="number" name="id" id="id" placeholder="ID">
-                <input type="text" name="first_name" id="nomeFuncionario" placeholder="Nome">
-                <input type="text" name="last_name" placeholder="Sobrenome">
-                <input type="text" name="email" placeholder="E-mail">
-                <input type="text" name="gender" placeholder="Sexo">
-                <input type="text" name="ip_address" placeholder="Endereço IP">
-                <input type="text" name="country" placeholder="País">
-                <input type="text" name="department" placeholder="Departamento">
-                <button>Cadastrar</button>
-                <button type="button">Cancelar</button>
-            </form>
+
+    <div class="container-geral">
+    
+        <div class="container-form">
+    
+                <form action="processa_login.php" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="txt_usuario">USUÁRIO</label>
+                        <input type="text" class="form-control" name="txt_usuario" id="txt_usuario">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txt_senha">SENHA</label>
+                        <input type="password" class="form-control" name="txt_senha" id="txt_senha">
+                    </div>
+
+                    <div class="form-group">
+                      <button class="btn btn-primary" type="submit">LOGAR</button>
+                    </div>
+
+                </form>
+
+            </div>
+
         </div>
-        <div class="excluir-funcionario">
-            <form action="acoes.php" method="POST">
-                <h1>Tem certeza de que deseja excluí-lo(a)?</h1>
-                <p>Se sim, digite o ID dele(a):</p>
-                <input type="text" name="confirmar">
-                <button>Excluir</button>
-            </form>
-        </div>  
-    </main>
-    <footer>Pedro Monteiro</footer>
+
+    </div>
+
 </body>
+
 </html>

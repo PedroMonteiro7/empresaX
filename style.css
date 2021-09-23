@@ -7,10 +7,12 @@
 body {
     display: flex;
     flex-direction: column;
-  background-color: rgb(58, 56, 56);
+    background-color: rgb(58, 56, 56);
     height: 100vh;
     align-items: center;
     padding: 30px;
+    gap: 20px;
+    overflow: hidden;
 }
 
 .cadastrar:hover {
@@ -28,7 +30,7 @@ table td {
 table th {
   background-color: rgb(85, 81, 81);
   height: 44px;
-  color: rgb(201, 197, 197);
+  color: rgb(218, 213, 213);
 }
 
 .cadastrar-novo-funcionario {

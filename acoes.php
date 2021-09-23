@@ -16,4 +16,4 @@ $novoFuncionario = [
 adicionarFuncionario("./empresaX.json", $novoFuncionario);
 
 //depois de adicionar ou excluir o funcionário, redireciona ao index.php
-header("location: index.php");
+header("location: area_restrita.php");
