@@ -1,6 +1,10 @@
 <?php
 
+    session_start();
+
     require("./funcoes.php");
+
+    verificarLogin();
 
     $funcionarios = lerArquivo("empresaX.json");
 
@@ -23,6 +27,14 @@
     <header>
         <h1>Funcionários da Empresa X</h1>
         <h3>A empresa conta com <?= count($funcionarios) ?> funcionários</h3>
+        <div class='toolbar'>
+        <h2>
+            <?php echo 'Olá, ' . strtoupper($_SESSION['usuario']) . ' - Login efetutado em: ' . $_SESSION['data_hora']; ?>
+        </h2>
+        <h2>
+           <a class="material-icons" href="processa_login.php?logout=true">logout</a>
+        </h2>
+    </div>
     </header>
     <main>
         <form>
