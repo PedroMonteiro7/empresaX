@@ -7,9 +7,8 @@
     verificarLogin();
 
     $funcionarios = lerArquivo("empresaX.json");
-
     if(isset($_GET["buscarFuncionario"]) && $_GET["buscarFuncionario"] != ""){
-        $funcionarios = buscarFuncionarioPorId($funcionarios, $_GET["buscarFuncionario"]);
+        $funcionarios = buscarFuncionario($funcionarios, $_GET["buscarFuncionario"]);
     }
 
 ?>
@@ -19,6 +18,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Empresa X</title>
@@ -37,8 +37,9 @@
     </div>
     </header>
     <main>
-        <form>
-            <input type="text" value="<?= isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : "" ?>" name="buscarFuncionario" placeholder="Buscar Funcionários">
+        <form class="form-buscar">
+            <input type="text" id="buscarFuncionario" value="<?= isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : "" ?>" 
+                                        name="buscarFuncionario" placeholder="Buscar Funcionários">
             <button>Buscar</button>
             <button type="button" class="cadastrar" onclick="showFormCadastrar()">Cadastrar</button>
         </form>
@@ -68,7 +69,7 @@
                 <td><?= $funcionario->department ?></td>
                 <td class="icons">
                     <form action="acoes.php" method="post">
-                        <button type="button" onclick="editar(<?= $funcionario->id ?>)"><img src="icons/botao-atualizar.png" alt="atualizar"></button>
+                        <button type="button" onclick="editar(<?= $funcionario->id ?>)"><img src="icons/pencil.png" alt="editar"></button>
                         <button type="button" onclick="deletar(<?= $funcionario->id ?>)"><img src="icons/lixeira-de-reciclagem.png" alt="lixeira"></button>
                     </form>
                 </td>
@@ -88,7 +89,7 @@
                 <input type="text" name="country" placeholder="País">
                 <input type="text" name="department" placeholder="Departamento">
                 <button>Cadastrar</button>
-                <button type="button">Cancelar</button>
+                <button type="button" onclick="exitFormCadastrar()">Cancelar</button>
             </form>
         </div>
         <div class="excluir-funcionario">

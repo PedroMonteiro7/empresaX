@@ -7,12 +7,11 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: rgb(58, 56, 56);
-    height: 100vh;
+    background-color: #bbdefb;
     align-items: center;
     padding: 30px;
     gap: 20px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 header {
@@ -20,24 +19,66 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: rgb(77, 86, 167);
+  gap: 10px;
+  width: 100vw;
 }
 
-.cadastrar:hover {
-    cursor: pointer;
-    background-color: rgb(121, 121, 121);
+.toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #8aacc8;
+  color: #dbf3f3;
+  width: 40%;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.form-buscar {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-buscar button {
+  height: 80%;
+}
+
+#buscarFuncionario {
+  width: 50%;
+  height: 100%;
+  border: 1px solid rgb(77, 86, 167);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: transparent;
+}
+
+#buscarFuncionario::placeholder {
+  color: rgb(77, 86, 167);
+}
+
+table {
+  background-color: #8aacc8;
+}
+
+table tr:nth-child(odd) {
+  background-color: #dbf3f3;
 }
 
 table td {
-    border: 1px;
-    background-color: rgb(126, 122, 122);
     padding: 5px;
     text-align: center;
 }
 
 table th {
-  background-color: rgb(85, 81, 81);
+  background-color: rgb(96, 136, 163);
   height: 44px;
-  color: rgb(218, 213, 213);
+  color: rgb(243, 239, 239);
 }
 
 .cadastrar-novo-funcionario {

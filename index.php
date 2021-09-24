@@ -19,11 +19,11 @@
 <body>
 
     <div class="container-geral">
-    
+
         <div class="container-form">
-    
-                <form action="processa_login.php" method="POST">
-                    
+
+                <form action="processa_login.php" method="POST" class="login">
+
                     <div class="form-group">
                         <label for="txt_usuario">USUÁRIO</label>
                         <input type="text" class="form-control" name="txt_usuario" id="txt_usuario">
